@@ -1,0 +1,56 @@
+{
+  "name": "bydn/framework",
+  "description": "ByDN Framework",
+  "homepage": "https://www.danielnavarroymas.com",
+  "support": {
+    "email": "support@danielnavarroymas.com"
+  },
+  "keywords": [
+  ],
+  "license": "LGPL-3.0",
+  "authors": [
+    {
+      "name": "Daniel Navarro",
+      "email": "danidnm@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.0.0"
+  },
+  "autoload": {
+    "classmap": [
+      "App/AppInterface.php",
+      "App/Bootstrap.php",
+      "App/CommandInterface.php",
+      "App/Config.php",
+      "App/Console.php",
+      "App/Cron.php",
+      "App/Http.php",
+      "Console/Cron.php",
+      "Console/Schedule.php",
+      "Console/Install.php",
+      "Console/Uninstall.php",
+      "Helper/AbstractHelper.php",
+      "Logger/Logger.php",
+      "Model/AbstractDbModel.php",
+      "Model/AbstractDbModelCollection.php",
+      "Model/AbstractModel.php",
+      "Model/AbstractFactory.php",
+      "Model/DbConnector.php",
+      "Model/Cron/Job.php",
+      "Model/Cron/JobFactory.php",
+      "Model/Cron/Job/Collection.php",
+      "Setup/Installer.php",
+      "Setup/InstallerAbstract.php",
+      "Setup/InstallerInterface.php",
+      "Setup/Uninstaller.php",
+      "Setup/UninstallerAbstract.php",
+      "Setup/UninstallerInterface.php",
+      "DataObject.php",
+      "Exception.php",
+      "Phrase.php"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": false
+}
