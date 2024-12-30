@@ -1,6 +1,6 @@
 <?php
 
-namespace ByDN\Framework\Console;
+namespace ByDN\Cron\Console;
 
 class Cron implements \ByDN\Framework\App\CommandInterface
 {

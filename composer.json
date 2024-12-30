@@ -1,0 +1,27 @@
+{
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Users/danielnavarro/Sites/framework/app/code/ByDN/Framework",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "/Users/danielnavarro/Sites/framework/app/code/ByDN/Cron",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {
+        "sergeytsalkov/meekrodb": "^2.5",
+        "php-di/php-di": "^7.0",
+        "bydn/framework": "@dev",
+        "bydn/cron": "@dev",
+        "monolog/monolog": "^3.5",
+        "ext-curl": "*",
+        "dragonmantank/cron-expression": "^3.3"
+    }
+}

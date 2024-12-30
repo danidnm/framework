@@ -2,7 +2,7 @@
 
 namespace ByDN\Framework\App;
 
-class Console implements AppInterface
+class Console extends AppAbstract
 {
     /**
      * @var \Psr\Container\ContainerInterface
@@ -38,11 +38,32 @@ class Console implements AppInterface
         // FIXME: Poner esto en otro sitio
         date_default_timezone_set($this->config->getData('config/timezone'));
     }
-    public function run()
+
+    /**
+     * @inheritDoc
+     */
+    public function _run()
     {
-        $commandClassName = $this->config->getData('command/' . $this->commandName . '/class');
-        $commandClass = $this->objectManager->get($commandClassName);
-        $commandClass->run($this->arguments);
+        if ($this->commandName) {
+            $commandClassName = $this->config->getData('command/' . $this->commandName . '/class');
+            $commandClass = $this->objectManager->get($commandClassName);
+            $commandClass->run($this->arguments);
+        }
+        else {
+            echo 'Implement list of commands' . PHP_EOL;  // FIXME
+            $commands = $this->config->getData('command');
+            foreach ($commands as $commandName => $command) {
+                echo $commandName . PHP_EOL;  // FIXME
+            }
+        }
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function _manageInstallRequired()
+    {
+        // TODO: Implement _manageInstallRequired() method.
     }
 
     /**

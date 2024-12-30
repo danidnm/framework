@@ -1,6 +1,6 @@
 <?php
 
-namespace ByDN\Framework\Model\Cron;
+namespace ByDN\Cron\Model;
 
 class JobFactory extends \ByDN\Framework\Model\AbstractFactory
 {

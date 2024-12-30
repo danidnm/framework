@@ -2,10 +2,15 @@
 
 namespace ByDN\Framework\App;
 
-class Http
+class Http extends AppAbstract
 {
-    public function run()
+    public function _run()
     {
+        // TODO: Implement _run() method.
+    }
 
+    public function setArguments(array $arguments)
+    {
+        // TODO: Implement setArguments() method.
     }
 }

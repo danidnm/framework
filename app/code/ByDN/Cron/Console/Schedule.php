@@ -1,6 +1,6 @@
 <?php
 
-namespace ByDN\Framework\Console;
+namespace ByDN\Cron\Console;
 
 class Schedule implements \ByDN\Framework\App\CommandInterface
 {
@@ -15,7 +15,7 @@ class Schedule implements \ByDN\Framework\App\CommandInterface
     private $config;
 
     /**
-     * @var \ByDN\Framework\Model\Cron\JobFactory
+     * @var \ByDN\Cron\Model\JobFactory
      */
     private $jobFactory;
 
@@ -40,13 +40,14 @@ class Schedule implements \ByDN\Framework\App\CommandInterface
      * @param \Psr\Container\ContainerInterface $objectManager
      * @param \Cron\CronExpression $cronExpression
      * @param \ByDN\Framework\App\Config $config
+     * @param \ByDN\Cron\Model\JobFactory $jobFactory
      * @param \Psr\Log\LoggerInterface $logger
      */
     public function __construct(
         \Psr\Container\ContainerInterface $objectManager,
         \Cron\CronExpression $cronExpression,
         \ByDN\Framework\App\Config $config,
-        \ByDN\Framework\Model\Cron\JobFactory $jobFactory,
+        \ByDN\Cron\Model\JobFactory $jobFactory,
         \Psr\Log\LoggerInterface $logger
     ) {
         $this->objectManager = $objectManager;
@@ -63,7 +64,7 @@ class Schedule implements \ByDN\Framework\App\CommandInterface
      */
     public function run($arguments)
     {
-        /** @var \ByDN\Framework\Model\Cron\Job $job */
+        /** @var \ByDN\Cron\Model\Job $job */
         $job = $this->jobFactory->create();
         $job->setData([
             'job_code' => 'my_code',
